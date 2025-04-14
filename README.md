@@ -37,4 +37,4 @@ Back to our topic: We are considering an exceptional case, where our communicati
 *Btw, we got over so many jargons already, already enough to flex in front of your non-tech friends. ;)*
 
 Okay, so what happens is: When device A wants to communicate with device B, provided they are connected to the same network, then the following steps happen:
--
+
