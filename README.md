@@ -1,12 +1,16 @@
-#Local-File-Storage-System
+Local-File-Storage-System
+-
 
-##The project is mainly to explore methods how an user can get to setup local file sharing system between thier devices in a **local-area-network**. (LAN).
+The project is mainly to explore methods how an user can get to setup local file sharing system between thier devices in a **local-area-network**. (LAN).
+--
 
-##We first will try to give you an overview of how devices are connected to each other in a local network or maybe in the internet.
+We first will try to give you an overview of how devices are connected to each other in a local network or maybe in the internet.
+--
 
-###Let's first understand, what happens when you connect your device to a router. Say, you have just bought a router which is connected to the *ISP(Internet Service Provider)*. Then you connect your device to this router. So, what happens under the hood?
+Let's first understand, what happens when you connect your device to a router. Say, you have just bought a router which is connected to the *ISP(Internet Service Provider)*. Then you connect your device to this router. So, what happens under the hood?
+---
 
-####Your device first sends something called a DHCP Disover. Omg, so many jargons. Lets get a hang. What is this? First, let's understand *DHCP(Dynamic Host Configuration Protocol)*. It's basically a set of info, which every device receives from DHCP servers. When your device is connected to the router, it does the following things:
+Your device first sends something called a DHCP Disover. Omg, so many jargons. Lets get a hang. What is this? First, let's understand *DHCP(Dynamic Host Configuration Protocol)*. It's basically a set of info, which every device receives from DHCP servers. When your device is connected to the router, it does the following things:
 - It does a **DHCP Discover**, where it boradcastsa DHCP Discover message so as to locate the available DHCP servers in the network.
 - Now, the DHCP servers which receive this DHCP Discover message respond with a **DHCP Offer** which includes an available IP address(note: this is private ip, exclusive for this device) and some other configuration parameter(which we will discuss in a while).
 - The device now selects an offer and sends a **DHCP Request** message to the selected DHCP server, which is basically a request for the offered IP address and other configurations.
