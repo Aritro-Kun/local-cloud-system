@@ -39,4 +39,16 @@ Back to our topic: We are considering an exceptional case, where our communicati
 *Btw, we got over so many jargons already, already enough to flex in front of your non-tech friends. ;)*
 
 Okay, so what happens is: When device A wants to communicate with device B, provided they are connected to the same network, then the following steps happen:
+Oh and! We are skipping two layers, where we are are now assuming that the device A has the data and it just needs to send to device B, we are skipping the application and transport layers, so as to not make things confusing.
+- Yes so, Device A will be sending the data to Device B, right? We add a header which has the source IP (IP of device A) and the destination IP (IP of device B). This happens in the Network Layer. So, we can keep in mind that local communication involves the use of IP addresses in the Network Layer.
+- Now, we come to the next layer, called the Data Link Layer. Here happens a magic. Remember, we once discussed that "in local networks, devices communicate with MAC Addresses"? Yes! So, device A checks it's ARP cache! What is ARP? It stands for *Address Resolution Protocol*. If device A has previously communicated with device B, then it's ARP cache must have device B's MAC Address. Oh, btw, the ARP cache basically maps a device's private IP to the device's MAC address. The MAC address is not assigned by the router or anything, it's named to each device by it's manufacturer. 
+- Let's assume, device A does not have device B's MAC address in it's ARP cache, so it then initiates an ARP request. It's basically an ARP broadcast message: "Who has this IP address?" The router and all the devices in the network receive this message. Now, device B is able to map it's IP address, so it sends a response/reply which is known as the ARP reply.
+- This ARP reply consists of the MAC address of device B. So, device A receives this reply and then it stores this IP address mapped to the MAC address of device B in its ARP cache.
+- Then, device A encapsulates this packet consisting of the source and destination's MAC addresses into something known as an Ethernet frame.
+- Next, device A sends this ethernet frame to the router.
+- Now, there is a built in device within the router known as the switch, which examines the destination's MAC address and forwards the frame to the device B, now that it has the MAC address.
+- Device B on receiving this ethernet frame, decapsulates the packets to retrieve information.
+
+This is an overview of what basically happens.
+
 
