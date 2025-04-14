@@ -52,3 +52,5 @@ Oh and! We are skipping two layers, where we are are now assuming that the devic
 This is an overview of what basically happens.
 
 
+You must now remember, that we had just assumed that device A knows the IP of device B, then only it can send the ARP request, what if it doesn't?
+Well, this can actually be solved manually, just a few terminal lines away. But, in this project we will try to automate this process, so that the device gets to retrieve the ARP cache already built by retrieving the IP and their MAC addresses so that it's seamless for user experience.
