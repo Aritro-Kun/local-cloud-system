@@ -55,4 +55,7 @@ This is an overview of what basically happens.
 You must now remember, that we had just assumed that device A knows the IP of device B, then only it can send the ARP request, what if it doesn't?
 Well, this can actually be solved manually, just a few terminal lines away. But, in this project we will try to automate this process, so that the device gets to retrieve the ARP cache already built by retrieving the IP and their MAC addresses so that it's seamless for user experience.
 
-Now let's try to retrieve the system's IP address, manually it's possible to do by typing `ipconfig /all` in your windows terminal or if you are in mac, follow the steps inside [MAC users](references/mac.md)
+Now let's try to retrieve the system's IP address, manually it's possible to do by typing `ipconfig /all` in your windows terminal or if you are in mac, follow the steps inside [Mac Reference](references/mac.md).
+
+But since we are building an actual software, we can't make the user do this. We need to search for some automation to build. That's where we stopdown and code.
+
