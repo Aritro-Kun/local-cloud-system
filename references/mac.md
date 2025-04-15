@@ -1,5 +1,5 @@
-
 So, here we discuss how you can have the info you get while you do `ipconfig /all` in your windows, in your Mac.
+-
 
 It involves quite a few drastic, tiring yet exciting steps, so let's get along.
 
@@ -8,43 +8,35 @@ It involves quite a few drastic, tiring yet exciting steps, so let's get along.
 - Next, copy this in the file, simply copy it and paste it in the file:
   
 
-#!/bin/bash
-
-# Change this if your main interface is different
 INTERFACE="en0"
 
 echo "=== Network Information for Interface: $INTERFACE ==="
 echo
 
-# 1. Private IP
 echo "Private IP Address:"
 ipconfig getifaddr $INTERFACE
 echo
 
-# 2. Subnet Mask
 echo "Subnet Mask:"
 ipconfig getoption $INTERFACE subnet_mask
 echo
 
-# 3. MAC Address
 echo "MAC Address:"
 networksetup -getmacaddress $INTERFACE | awk '{print $3}'
 echo
 
-# 4. Default Gateway
 echo "Default Gateway:"
 ipconfig getoption $INTERFACE router
 echo
 
-# 5. DNS Servers
 echo "DNS Servers:"
 scutil --dns | awk '/nameserver\[[0-9]+\]/ {getline; print}' | sort -u
 echo
 
-# 6. DHCP Server
 echo "DHCP Server:"
 ipconfig getpacket $INTERFACE | grep "server_identifier" | awk '{print $3}'
 echo
+
 
 - Then save this file, for this type `Ctrl + O`, i mean Oh, as in O in operate. Then click Enter and `Ctrl + X` to exit out of the file.
 - Make the file executable: `chmod +x network-info.sh`
